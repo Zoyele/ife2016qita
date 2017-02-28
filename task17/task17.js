@@ -15,7 +15,7 @@ function addEventHandler(ele,type,func){
   }else if(ele.attachEvent){
     ele.attachEvent("on" +　type,func);
   }else{
-    ele["on"+type] = fnuc;
+    ele["on"+type] = func;
   }
 }
 //一以下两个函数用于随机模拟生成测试数据
