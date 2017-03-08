@@ -60,7 +60,7 @@ function rightOut(){
 	if(box.childNodes.length === 0 ){
 		alert("队伍为空");
 	}else{
-		var data = box.firstChild.innerHTML;
+		var data = box.lastChild.innerHTML;
 		alert(data);
 		box.removeChild(box.lastChild);
 	}
