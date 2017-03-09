@@ -11,7 +11,7 @@ function eventHandle(ele,type,func){
 //检测输入的数据，并赋值
 function inputData(){
 	var data = document.getElementById('input-data').value;
-	var pattern = /^\d+$/;
+	var pattern = /^([1-9]\d|100)$/;
 	if(pattern.test(data)){
 		return data;
 	}else{
@@ -23,6 +23,10 @@ function inputData(){
 function leftIn(){
 	var box = document.getElementById('box');
 	var div = document.createElement("div");
+	if(box.childElementCount > 59){
+		alert("太多了，超过60个了");
+		return;
+	}
 	if(inputData()){
 		var data = inputData();
 		div.innerHTML = data;
@@ -36,6 +40,10 @@ function leftIn(){
 function rightIn(){
 	var box = document.getElementById('box');
 	var div = document.createElement("div");
+	if(box.childElementCount > 59){
+		alert("太多了，超过60个了");
+		return;
+	}
 	if(inputData()){
 		var data = inputData();
 		div.innerHTML = data;
@@ -75,7 +83,7 @@ function randomData(){
 	var data = [];
 	var cont = "";
 	for(var i = 0; i < 20; i++){
-		data[i] = Math.round(Math.random()*100);
+		data[i] = Math.floor(Math.random()*91+9);
 		cont += '<div style ="height:' + data[i] +'px;margin-top:' + (200-data[i]) + 'px;">' + data[i] + '</div>';
 
 	}
@@ -83,20 +91,28 @@ function randomData(){
 }
 //冒泡排序
 function sortData(){
+	var timer = null;
 	var box = document.getElementById('box');
-	var len = box.getElementsByTagName('div').length
-	for (var i = 0; i < len; i++) {
-		for (var j = 0; j < len-1-i; j++) {
-			function sorting(){
-				var arr = box.getElementsByTagName('div');
-				if(arr[j] > arr[j+1]){
-					var temp = box.replaceChild(arr[j+1],arr[j]);
-					box.replaceChild(arr[j+1],arr[j]);
+	var len = box.getElementsByTagName('div').length;
+	var i = 0, j = 0, temp;
+	timer = setInterval(sorting,25);
+	function sorting(){
+	    if(i < len){
+	    	if(j < len-i-1){
+	    		var arr = box.getElementsByTagName('div');
+				if(parseInt(arr[j].innerHTML) > parseInt(arr[j+1].innerHTML)){
+					temp = box.replaceChild(arr[j+1],arr[j]);
 					box.insertBefore(temp,arr[j+1]);
 				}
-			}
-			sorting();
-		}
+				j++;
+	    	}else{
+	    		i++;
+	    		j = 0;
+	    	}
+	    }else{
+	    	clearInterval(timer);
+	    	return;
+	    }
 	}
 
 }
