@@ -1,0 +1,10 @@
+
+#box div{
+	background-color: red;
+	color: red;
+	float: left;
+	width:30px;
+	margin-right: 10px;
+	line-height: 50px;
+	overflow: hidden;
+}
