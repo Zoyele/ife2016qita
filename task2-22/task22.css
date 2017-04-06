@@ -1,0 +1,31 @@
+*{
+	margin:0;
+	padding: 0;
+}
+.wrap{
+	display: flex;
+	border:  1px solid #000;
+	width: 600px;
+	height: 150px;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+}
+.wrap div{
+	display: flex;
+	height: 70%;
+	width: 44%;
+	border:  1px solid #000;
+	margin: 0 3%;
+	justify-content: center;
+	align-items: center;
+	background:#fff;
+}
+.btn-wrap{
+	text-align: center;
+	padding-top: 20px;
+}
+button{
+	display: inline-block;
+	padding: 4px 10px;
+}
