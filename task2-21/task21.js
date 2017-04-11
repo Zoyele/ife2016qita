@@ -49,23 +49,21 @@ function inputData(){
 		renderTags();
 	}
 }
-//删除标签
+//删除标签，有问题
 function deleteRender(x){
 	var data = x.innerHTML;
 	x.innerHTML = "删除" + data;
+	console.log("222");
 
 
 }
-
+//删除
 
 //绑定函数
 function init(){
 	var tags = document.getElementsByTagName('input')[0];
-	var spanArr = document.getElementById('tag-box').getElementsByTagName('span');
 	eventHandle(tags,'keypress',inputData);
-	for (var i = 0; i < spanArr.length; i++) {
-		eventHandle(spanArr[i],'mouseover',deleteRender.bind(spanArr[i],spanArr[i]));
-	}
+	console.log(document.getElementById('tag-box').getElementsByTagName('span'));
 }
 init();
 
