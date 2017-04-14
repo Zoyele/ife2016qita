@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task30</title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+	}
+	.container{
+		width: 960px;
+		margin: 0 auto;
+	}
+	label{
+		display: block;
+		width: 100%;
+		font-weight: bold;
+		text-align: right;
+	}
+	table{
+		margin: 20px auto;
+		overflow: hidden;
+	}
+	table td{
+		padding: 10px;
+	}
+	input{
+		width: 300px;
+		height: 30px;
+	}
+	button{
+		width: 100%;
+		border-radius: 15px;
+		height: 30px;
+		font-weight: bold;
+		font-size: 20px;
+		background-color: #3299cc;
+	}
+	.hint{
+		display: none;
+	}
+	.right{
+		border-color: green;
+		color: green;
+	}
+	.wrong{
+		border-color: red;
+		color: red;
+	}
+	.visible{
+		display: table-row;
+	}
+
+	</style>
+</head>
+<body>
+<div class="container">
+	<form>
+		<table>
+			<tr>
+				<td><label>名称：</label></td>
+				<td><input name = "inputName" type="text"></td>
+			</tr>
+			<tr class="hint">
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label>密码：</label></td>
+				<td><input name = "inputPassword" type="password"></td>
+			</tr>
+			<tr class="hint">
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label>确认密码：</label></td>
+				<td><input name = "rePassword" type="password"></td>
+			</tr>
+			<tr class="hint">
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label>邮箱：</label></td>
+				<td><input name = "inputEmail" type="text"></td>
+			</tr>
+			<tr class="hint">
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td><label>手机：</label></td>
+				<td><input name = "inputPhoneNumber" type="text"></td>
+			</tr>
+			<tr class="hint">
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button>提交</button></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script type="text/javascript" src="task30.js"></script>
+	
+</body>
+</html>
